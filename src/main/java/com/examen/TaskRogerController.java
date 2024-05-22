@@ -3,6 +3,7 @@ package com.examen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -29,5 +30,10 @@ public class TaskRogerController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(taskRogerDTO.getId()).toUri();
         return ResponseEntity.created(uri).body(taskRogerDTO);
 
+    }
+    @DeleteMapping("/{name}")
+    public ResponseEntity<Void> delete(@PathVariable String name) {
+        taskRogerService.delete(name);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -22,6 +22,7 @@ public class TaskRogerService {
         Page<TaskRoger> list = taskRogerRepository.findAll(pageable);
         return list.map(TaskRogerDTO::new);
     }
+
     @Transactional
     public TaskRogerDTO insert(TaskRogerDTO taskRogerDTO) {
         TaskRoger entity = new TaskRoger();
@@ -31,4 +32,10 @@ public class TaskRogerService {
         entity = taskRogerRepository.save(entity);
         return new TaskRogerDTO(entity);
     }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public void delete(String name) {
+        taskRogerRepository.deleteByName(name);
+    }
 }
+
