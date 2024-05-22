@@ -1,12 +1,10 @@
 package com.examen;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import org.springframework.transaction.annotation.Propagation;
 
 @Service
 public class TaskRogerService {
@@ -33,8 +31,8 @@ public class TaskRogerService {
         return new TaskRogerDTO(entity);
     }
 
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public void delete(String name) {
+    @Transactional
+    public void deleteByName(String name) {
         taskRogerRepository.deleteByName(name);
     }
 }

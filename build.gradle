@@ -31,8 +31,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	implementation 'io.springfox:springfox-boot-starter:3.0.0' // O la versión más reciente disponible
-
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 }
 
 tasks.named('test') {
