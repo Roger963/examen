@@ -1,13 +1,13 @@
 * Metodo select all 
   ```sh
   address:
-  http://localhost:8080/api/v1/roger/all
+  http://localhost:7006/api/v1/roger/all
   ```
 
 * Metodo inserted 
   ```sh
   address:
-  http://localhost:8080/api/v1/roger/all
+  http://localhost:7006/api/v1/roger/all
   JSON:
   
     {
@@ -21,5 +21,5 @@
 * Metodo deleted by name 
   ```sh
   address:
-  http://localhost:8080/api/v1/roger/name=roger 
+  http://localhost:7006/api/v1/roger/name=roger 
   ```
